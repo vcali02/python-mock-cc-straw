@@ -6,31 +6,32 @@ class NationalPark:
         self.name = name
         self._trips = []
         self._visitors = []
+        
 
     @property
-    def national_park(self):
-        return self._national_park
+    def name(self):
+        return self._name
     
-    @national_park.setter
-    def national_park(self, national_park):
-        if isinstance(national_park, str) and not hasattr(self, "national_park"):
-            self._national_park = national_park
+    @name.setter
+    def name(self, name):
+        if isinstance(name, str) and not hasattr(self, "name"):
+            self._name = name
         else:
-            raise Exception("National park cannot be change")
+            raise Exception("Name park cannot be change")
 
 
         
     def trips(self, new_trip=None):
         from classes.trip import Trip
         if isinstance(new_trip,  Trip):
-            self._trip.append(new_trip)
-        return self._trip
+            self._trips.append(new_trip)
+        return self._trips
     
     def visitors(self, new_visitor=None):
         from classes.visitor import Visitor
         if isinstance(new_visitor, Visitor):
-            self._visitor.append(new_visitor)
-        return self._visitor
+            self._visitors.append(new_visitor)
+        return self._visitors
     
     def total_visits(self):
         pass
