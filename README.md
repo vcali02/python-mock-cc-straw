@@ -1,4 +1,4 @@
-# Mock Code Challenge - National Parks (Object Relationships)
+# Mock Code Challenge (Object Relationships)
 
 For this assignment, we'll be working with a national park planner-style domain.
 
