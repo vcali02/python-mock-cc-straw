@@ -5,7 +5,7 @@ class Visitor:
 
     def __init__(self, name):
         self.name = name
-        #I DIDNT DO THIS
+        #I DIDN'T DO THIS
         self._trips = []
         self._national_parks = []
 
@@ -15,7 +15,7 @@ class Visitor:
     
     @name.setter
     def name(self, name):
-        if isinstance(name, str) and 1 <= len(name) <= 15:
+        if isinstance(name, str) and not hasattr(self, "name") and len(name) >= 1 and len(name) <= 15:
             self._name = name
         else:
             raise Exception("Invalid name")
@@ -30,6 +30,6 @@ class Visitor:
     
     def national_parks(self, new_national_park=None):
         from classes.national_park import NationalPark
-        if isinstance(new_national_park, NationalPark):
+        if isinstance(new_national_park, NationalPark) and new_national_park not in self._national_parks:
             self._national_parks.append(new_national_park)
         return self._national_parks
